@@ -1,6 +1,6 @@
 [project]
 name = "ml-sentry"
-version = "0.1.1"
+version = "0.1.2"
 description = "Lightweight profiling decorator for ML pipelines (time, RAM, args)"
 authors = [{ name = "Oleg Nagornyi" }]
 requires-python = ">=3.12"
