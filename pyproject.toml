@@ -1,10 +1,15 @@
 [project]
 name = "ml-sentry"
-version = "0.1.0"
+version = "0.1.1"
 description = "Lightweight profiling decorator for ML pipelines (time, RAM, args)"
 authors = [{ name = "Oleg Nagornyi" }]
 requires-python = ">=3.12"
 dependencies = ["psutil>=5.9"]
+
+[project.urls]
+"Homepage" = "https://github.com/i-Hun/ml-sentry"
+"Bug Tracker" = "https://github.com/i-Hun/ml-sentry/issues"
+"Source Code" = "https://github.com/i-Hun/ml-sentry/src/ml_sentry"
 
 [build-system]
 requires = ["setuptools>=68"]
