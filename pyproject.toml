@@ -1,0 +1,73 @@
+[project]
+name = "ml-sentry"
+version = "0.1.0"
+description = "Lightweight profiling decorator for ML pipelines (time, RAM, args)"
+authors = [{ name = "Oleg Nagornyi" }]
+requires-python = ">=3.12"
+dependencies = ["psutil>=5.9"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.ruff]
+
+src = ["src", "tests"]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "I",      # isort
+    "N",      # pep8-naming
+    "B",      # bugbear
+    "C4",     # comprehensions
+    "DTZ",    # datetimez
+    "FA",     # future-annotations
+    "ISC",    # implicit string concat
+    "PIE",    # flake8-pie
+    "PT",     # flake8-pytest-style
+    "SIM",    # flake8-simplify
+    "ARG",    # flake8-unused-argument
+    "E",      # pycodestyle (errorrs)
+    "F",      # pyflakes
+    "UP",     # pyupgrade
+    "A",      # builtins shadowing
+    "RET",    # return anti-patterns
+    "RUF",
+    "ICN",    # Use common import conventions
+    "TID",    # Some good import practices
+    "TC",     # Enforce importing certain types in a TYPE_CHECKING block
+    "NPY",    # Some numpy-specific things
+    "PD",     # pandas-vet
+    "PERF",   # performance
+    "W",      # pycodestyle's warnings
+    "ANN",    # type hints (pipeline contracts)
+    "TRY",    # try/except best practices
+]
+
+ignore = [
+    "E501",
+    "N806",    # uppercase variables
+    "ARG002",  # unused args
+    "RUF012",  # Mutable default value for class attribute
+    "ANN401",  # Any is ok
+    "TRY003",  # Avoid specifying long messages outside the exception class
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"tests/**.py" = ["S101"]  # use of `assert`
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+skip-magic-trailing-comma = false
+
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
